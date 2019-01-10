@@ -3,10 +3,11 @@ import BasicInput from "react-phone-number-input/basic-input";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { parsePhoneNumber, CountryCode } from "libphonenumber-js";
 import getConfig from "./config";
-import { ReactComponent as Checkmark } from "./checkmark.svg";
-import { ReactComponent as Errormark } from "./errormark.svg";
+import  Checkmark  from "./Checkmark";
+import  Errormark from "./Errormark";
 import "./PhoneInput.scss";
 import "./checkmark.scss";
+
 
 declare module "libphonenumber-js" {
   export interface PhoneNumber {
@@ -171,7 +172,7 @@ export default class MsisdnComponent extends React.Component<IProps> {
           }}
         />
         <div className="checkmark">
-          {this.state.showError ? (
+        {this.state.showError ? (
             <Errormark />
           ) : this.state.isValid ? (
             <Checkmark />

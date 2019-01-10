@@ -15,9 +15,9 @@ var _libphonenumberJs = require("libphonenumber-js");
 
 var _config = _interopRequireDefault(require("./config"));
 
-var _checkmark = require("./checkmark.svg");
+var _Checkmark = _interopRequireDefault(require("./Checkmark"));
 
-var _errormark = require("./errormark.svg");
+var _Errormark = _interopRequireDefault(require("./Errormark"));
 
 require("./PhoneInput.scss");
 
@@ -214,7 +214,7 @@ function (_React$Component) {
         }
       }), React.createElement("div", {
         className: "checkmark"
-      }, this.state.showError ? React.createElement(_errormark.ReactComponent, null) : this.state.isValid ? React.createElement(_checkmark.ReactComponent, null) : null));
+      }, this.state.showError ? React.createElement(_Errormark.default, null) : this.state.isValid ? React.createElement(_Checkmark.default, null) : null));
     }
   }]);
 
