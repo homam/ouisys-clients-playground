@@ -47,8 +47,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(MsisdnComponent)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputElement", void 0);
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", void 0);
 
     return _this;

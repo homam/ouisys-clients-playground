@@ -32,6 +32,7 @@ interface IProps {
   showFlag?: boolean;
   showMobileIcon?: boolean;
   showError: boolean;
+  inputElementRef: React.RefObject<HTMLInputElement>
 }
 
 function parseMSISDN(country: string, msisdn: string) {
@@ -75,18 +76,19 @@ function getBupperNumber(nationalNumber) {
 }
 
 export default class MsisdnComponent extends React.Component<IProps> {
-  inputElement = null;
   state = {
     isValid: false,
     showError: false
   };
   focusOnInputElement(ev) {
-    const inputElement = this.inputElement;
-    setTimeout(() => {
-      if (inputElement != null) {
-        (inputElement as any).focus();
-      }
-    }, 20);
+    if(!!this.props.inputElementRef && !!this.props.inputElementRef.current) {
+      const inputElement = this.props.inputElementRef.current;
+      setTimeout(() => {
+        if (inputElement != null) {
+          (inputElement as any).focus();
+        }
+      }, 20);
+    }
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.props.showError != prevProps.showError) {
@@ -132,10 +134,8 @@ export default class MsisdnComponent extends React.Component<IProps> {
           </div>
         ) : null}
         <BasicInput
-          ref={el => {
-            this.inputElement = el;
-          }}
-          placeholder="Enter phone number"
+          ref={this.props.inputElementRef}
+          placeholder={this.props.placeholder || "Enter phone number"}
           displayInitialValueAsLocalNumber
           country={country.toUpperCase()}
           className="text-input"

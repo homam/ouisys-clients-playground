@@ -72,6 +72,8 @@ function (_React$PureComponent) {
       isValid: false
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputElementRef", _react.default.createRef());
+
     return _this;
   }
 
@@ -85,6 +87,7 @@ function (_React$PureComponent) {
       }, _react.default.createElement("div", {
         className: "info"
       }, "Enter your mobile number to start:"), _react.default.createElement(_PhoneInput.default, {
+        inputElementRef: this.inputElementRef,
         countryCode: COUNTRY,
         placeholder: "Phone number",
         msisdn: this.state.msisdn,

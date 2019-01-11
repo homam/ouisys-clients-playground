@@ -13,5 +13,6 @@ export default class MSISDNEntry extends React.PureComponent<IProps> {
         bupperNumber: string;
         isValid: boolean;
     };
+    inputElementRef: React.RefObject<HTMLInputElement>;
     render(): JSX.Element;
 }

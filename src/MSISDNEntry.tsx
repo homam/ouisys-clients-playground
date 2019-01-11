@@ -25,11 +25,13 @@ export default class MSISDNEntry extends React.PureComponent<IProps> {
     bupperNumber: "",
     isValid: false
   };
+  inputElementRef = React.createRef<HTMLInputElement>()
   render() {
     return (
       <div className="MSISDNEntry">
         <div className="info">Enter your mobile number to start:</div>
         <PhoneInput
+          inputElementRef={this.inputElementRef}
           countryCode={COUNTRY}
           placeholder="Phone number"
           msisdn={this.state.msisdn}

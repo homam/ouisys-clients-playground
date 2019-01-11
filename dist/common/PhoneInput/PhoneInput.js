@@ -110,8 +110,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(MsisdnComponent)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputElement", null);
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       isValid: false,
       showError: false
@@ -123,12 +121,14 @@ function (_React$Component) {
   _createClass(MsisdnComponent, [{
     key: "focusOnInputElement",
     value: function focusOnInputElement(ev) {
-      var inputElement = this.inputElement;
-      setTimeout(function () {
-        if (inputElement != null) {
-          inputElement.focus();
-        }
-      }, 20);
+      if (!!this.props.inputElementRef && !!this.props.inputElementRef.current) {
+        var inputElement = this.props.inputElementRef.current;
+        setTimeout(function () {
+          if (inputElement != null) {
+            inputElement.focus();
+          }
+        }, 20);
+      }
     }
   }, {
     key: "componentDidUpdate",
@@ -172,10 +172,8 @@ function (_React$Component) {
         className: "country-code",
         onMouseDown: focusOnInputElement
       }, "(", countryCode, ")") : null, React.createElement(_basicInput.default, {
-        ref: function ref(el) {
-          _this2.inputElement = el;
-        },
-        placeholder: "Enter phone number",
+        ref: this.props.inputElementRef,
+        placeholder: this.props.placeholder || "Enter phone number",
         displayInitialValueAsLocalNumber: true,
         country: country.toUpperCase(),
         className: "text-input",

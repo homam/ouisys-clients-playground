@@ -22,9 +22,9 @@ interface IProps {
     showFlag?: boolean;
     showMobileIcon?: boolean;
     showError: boolean;
+    inputElementRef: React.RefObject<HTMLInputElement>;
 }
 export default class MsisdnComponent extends React.Component<IProps> {
-    inputElement: null;
     state: {
         isValid: boolean;
         showError: boolean;
