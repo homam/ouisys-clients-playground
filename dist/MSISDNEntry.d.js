@@ -47,6 +47,8 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", void 0);
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputElementRef", void 0);
+
     return _this;
   }
 

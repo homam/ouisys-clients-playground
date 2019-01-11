@@ -133,7 +133,9 @@ export default class MsisdnComponent extends React.Component<IProps> {
             ({countryCode})
           </div>
         ) : null}
-        <BasicInput
+        
+         <BasicInput
+          smartCaret={typeof navigator == "undefined" ? true : /SamsungBrowser/ig.test(navigator.userAgent) ? false: true}
           ref={this.props.inputElementRef}
           placeholder={this.props.placeholder || "Enter phone number"}
           displayInitialValueAsLocalNumber
@@ -171,12 +173,13 @@ export default class MsisdnComponent extends React.Component<IProps> {
             redo(msisdn);
           }}
         />
-        <div className="checkmark">
+        
+        <div className="checkmark-container" data-checkmark-container="true">
         {this.state.showError ? (
             <Errormark />
           ) : this.state.isValid ? (
             <Checkmark />
-          ) : null}
+          ) : ""}
         </div>
         {/*<DigitOnlyInput
           inputRef={el => {

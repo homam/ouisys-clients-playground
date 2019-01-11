@@ -1,25 +1,21 @@
 {
   "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "jsx": "react",
     "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "declaration": true,
-    "jsx": "preserve",
-    "noImplicitAny": false
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "lib": ["es5", "es2015", "dom", "scripthost"], 
+    "typeRoots": ["node_modules/@types", "src/@types"],
+    "declaration":true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*", "ssr/**/*", "webpack/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -11,7 +11,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function Checkmark() {
   return React.createElement("svg", {
-    className: "checkmark",
+    className: "checkmark__icon",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 52 52"
   }, React.createElement("circle", {

@@ -1,6 +1,6 @@
 import * as React from 'react'
 export default function Checkmark() {
-    return <svg xmlns="http://www.w3.org/2000/svg" className="errormark" viewBox="0 0 90.27 90.27">
+    return <svg xmlns="http://www.w3.org/2000/svg" className="errormark__icon" viewBox="0 0 90.27 90.27">
     <defs>
       <style dangerouslySetInnerHTML={{__html: `
       svg {

@@ -172,6 +172,7 @@ function (_React$Component) {
         className: "country-code",
         onMouseDown: focusOnInputElement
       }, "(", countryCode, ")") : null, React.createElement(_basicInput.default, {
+        smartCaret: typeof navigator == "undefined" ? true : /SamsungBrowser/ig.test(navigator.userAgent) ? false : true,
         ref: this.props.inputElementRef,
         placeholder: this.props.placeholder || "Enter phone number",
         displayInitialValueAsLocalNumber: true,
@@ -211,8 +212,9 @@ function (_React$Component) {
           redo(msisdn);
         }
       }), React.createElement("div", {
-        className: "checkmark"
-      }, this.state.showError ? React.createElement(_Errormark.default, null) : this.state.isValid ? React.createElement(_Checkmark.default, null) : null));
+        className: "checkmark-container",
+        "data-checkmark-container": "true"
+      }, this.state.showError ? React.createElement(_Errormark.default, null) : this.state.isValid ? React.createElement(_Checkmark.default, null) : ""));
     }
   }]);
 
