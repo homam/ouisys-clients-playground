@@ -1,6 +1,6 @@
 {
   "name": "ouisys-phone-input",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "keywords": [],
   "main": "dist/common/PhoneInput/index.js",
